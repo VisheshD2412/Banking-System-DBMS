@@ -1,0 +1,43 @@
+=========================================
+BANKING SYSTEM API DOCUMENTATION
+=========================================
+
+BASE URL: http://localhost:5000/api/v1
+
+ENDPOINTS:
+----------
+
+1. GET /customers
+   - Returns all customers
+   - Response: JSON array of customer objects
+
+2. GET /customers/{id}
+   - Returns specific customer details
+   - Response: Customer object with accounts
+
+3. POST /accounts
+   - Creates new account
+   - Body: {customer_id, account_type, initial_deposit}
+
+4. POST /transfer
+   - Transfers funds between accounts
+   - Body: {from_account, to_account, amount}
+
+5. GET /transactions/{account_id}
+   - Returns transaction history
+   - Query params: ?start_date=&end_date=
+
+6. GET /analytics/branch-performance
+   - Returns branch-wise analytics
+   - Response: Aggregated statistics
+
+AUTHENTICATION:
+--------------
+Header: Authorization: Bearer <token>
+
+TECHNOLOGY STACK:
+----------------
+Backend: Python Flask
+Database: MySQL (relational) + MongoDB (transaction logs)
+Frontend: HTML/CSS/JavaScript
+Analytics: Chart.js for dashboards

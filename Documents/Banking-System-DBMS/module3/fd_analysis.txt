@@ -1,0 +1,37 @@
+=========================================
+FUNCTIONAL DEPENDENCY ANALYSIS
+=========================================
+
+Identified Functional Dependencies:
+-------------------------------------
+
+1. customer_id -> customer_name, email, phone, address
+   (Customer ID uniquely determines customer details)
+
+2. account_id -> account_number, account_type, balance, customer_id, branch_id
+   (Account ID determines all account attributes)
+
+3. transaction_id -> transaction_type, amount, date, account_id
+   (Transaction ID determines transaction details)
+
+4. branch_id -> branch_name, city, address
+   (Branch ID determines branch information)
+
+5. employee_id -> first_name, last_name, position, salary, branch_id
+   (Employee ID determines employee details)
+
+6. loan_id -> loan_type, loan_amount, remaining_balance, status, customer_id
+   (Loan ID determines loan attributes)
+
+BCNF Decomposition Steps:
+--------------------------
+Step 1: Identified all functional dependencies
+Step 2: Checked if LHS of each FD is a superkey
+Step 3: All tables decomposed where determinant is primary key
+Step 4: Removed all transitive and partial dependencies
+Step 5: Result - All 6 tables satisfy BCNF conditions
+
+Conclusion:
+-----------
+The banking schema is fully normalized to BCNF.
+No update/insert/delete anomalies exist.
